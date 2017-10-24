@@ -4,9 +4,9 @@
 ############## START ###################
 lcode="xx" # ISO 639-1 code of target language. See `lcodes.txt`.
 max_corpus_size=1000000000 # the maximum size of the corpus. Feel free to adjust it according to your computing power.
-vector_size=300 # the size of a word vector
+vector_size=150 # the size of a word vector
 window_size=5 # the maximum distance between the current and predicted word within a sentence.
-vocab_size=20000 # the maximum vocabulary size
+vocab_size=100000 # the maximum vocabulary size
 num_negative=5 # the int for negative specifies how many “noise words” should be drawn
 ############## END #####################
 
