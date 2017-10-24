@@ -59,10 +59,14 @@ def make_wordvectors():
                                    window=window_size)
     
     model.save('data/{}.bin'.format(lcode))
+    print "Model saved."
     
     # Save to file
     with codecs.open('data/{}.tsv'.format(lcode), 'w', 'utf-8') as fout:
-        for i, word in enumerate(model.index2word):
+        print "Start writing tsv file."
+        for i, word in enumerate(model.wv.index2word):
+            if (i % 10000) == 0:
+                print "%s words written.." % i
             fout.write(u"{}\t{}\t{}\n".format(str(i), word.encode('utf8').decode('utf8'),
                                               np.array_str(model[word])
                                               ))
